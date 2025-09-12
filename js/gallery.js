@@ -65,7 +65,7 @@ const images = [
 ];
  const galleryContainer = document.querySelector(".gallery");
 
-// Генерація розмітки
+ 
 function generateImage(imagesArray) {
   return imagesArray.map(({ preview, original, description }) => `
     <li class="gallery-item">
@@ -81,10 +81,9 @@ function generateImage(imagesArray) {
   `).join('');
 }
 
-// Вставка розмітки
+ 
 galleryContainer.innerHTML = generateImage(images);
 
-// Обробка кліку
 galleryContainer.addEventListener("click", galleryClick);
 
 function galleryClick(event) {
@@ -98,7 +97,7 @@ function galleryClick(event) {
 
   const instance = basicLightbox.create(`
     <div class="modal">
-      <img class="modal-image" src="${largeImage}" alt="${altText}" />
+      <img class="modal-image" src="${largeImage}" alt="${altText}" style="max-height: 740px;"/>
     </div>
   `);
 
